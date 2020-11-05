@@ -1,0 +1,43 @@
+CREATE TABLE "Data Department"."PL"
+(
+    "IND" integer NOT NULL,
+    "Status" text,
+    "Score" integer,
+    "Weighted" decimal,
+    "Survey Date and Time" date,
+    "Outreach Team" text,
+    "Interviewer Name" text,
+    "First Name" text,
+    "Middle Name" text,
+    "Last Name" text,
+    "DOB" date,
+    "Age" integer,
+    "SSN" text,
+    "Sleeping Location" text,
+    "LoH" decimal,
+    "Family Size" integer,
+    "Homelessness Status Documentation" text,
+    "CH Documentation" text,
+    "Disability Documentation" text,
+    "CH Status" text,
+    "Document Ready Date" date,
+    "Match Date" date,
+    "Housing Provider" text,
+    "Unit ID" text,
+    "Housing Type Housed" text,
+    "Date Housed" date,
+    "Deceased" text,
+    "Inactive Date" date,
+    "Client Inactive" text,
+    "Housed Elsewhere" text,
+    "Special Population" text,
+    "Last Contact Date" text,
+    "Notes" text,
+    "Survey City;Day City;Sleep City" text,
+    "SPA" text,
+    "CES Unique ID" text,
+    PRIMARY KEY ("IND")
+);
+
+ALTER TABLE "Data Department"."BNL"
+    OWNER to postgres;

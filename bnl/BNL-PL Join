@@ -1,0 +1,4 @@
+SELECT *
+FROM "Data Department".bnl
+WHERE cname IN (SELECT first_name||' '||last_name AS fullname
+FROM "Data Department".pl) 
