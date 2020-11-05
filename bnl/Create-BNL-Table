@@ -1,38 +1,38 @@
-CREATE TABLE "Data Department"."BNL"
+CREATE TABLE data_department.bnl
 (
-    "IND" integer NOT NULL,
-    "Unique ID" text COLLATE pg_catalog."default" NOT NULL,
-    "Personal ID" integer NOT NULL,
-    "Enrollment ID" integer NOT NULL,
-    "Full Name" text COLLATE pg_catalog."default",
-    "Project Start Date" date NOT NULL,
-    "Project Exit Date" date,
-    "HoH" text COLLATE pg_catalog."default",
-    "Age" integer,
-    "Ethnicity" text COLLATE pg_catalog."default",
-    "Gender" text COLLATE pg_catalog."default",
-    "Race" text COLLATE pg_catalog."default",
-    "Veteran" text COLLATE pg_catalog."default",
-    "Program City" text COLLATE pg_catalog."default",
-    "Chronic" text COLLATE pg_catalog."default",
-    "Homelessness Start Date" date,
-    "City of Last Address" text COLLATE pg_catalog."default",
-    "City Immediately Prior" text COLLATE pg_catalog."default",
-    "Destination" text COLLATE pg_catalog."default",
-    "Any Disability" text COLLATE pg_catalog."default",
-    "Chronic Health Disability" text COLLATE pg_catalog."default",
-    "Developmental Disability" text COLLATE pg_catalog."default",
-    "HIV/AIDS Disability" text COLLATE pg_catalog."default",
-    "Mental Health Disability" text COLLATE pg_catalog."default",
-    "Physical Disability" text COLLATE pg_catalog."default",
-    "Substance Abuse Disability" text COLLATE pg_catalog."default",
-    "Programs Full Name" text COLLATE pg_catalog."default",
-    "Project Type" text COLLATE pg_catalog."default",
-    "City of Current Homelessness" text COLLATE pg_catalog."default",
-    CONSTRAINT "BNL_pkey" PRIMARY KEY ("IND")
+    ind integer NOT NULL,
+    uid text NOT NULL,
+    pid integer NOT NULL,
+    eid integer NOT NULL,
+    cname text
+    start_date date NOT NULL,
+    exit_date date,
+    hoh text
+    age integer,
+    ethnicity text
+    gender text
+    race text
+    veteran text
+    program_city text 
+    chronic text
+    episode_start_date date,
+    city_last_address text
+    city_immediately_prior text
+    destination text
+    any_disability text
+    chronic_disability text
+    developmental_disability text
+    hiv_disability text
+    mh_disability text
+    physical_disability text
+    sud_disability text
+    pname text
+    ptype text
+    current_homelessness_city text
+    CONSTRAINT "BNL_pkey" PRIMARY KEY ind)
 )
 
 TABLESPACE pg_default;
 
-ALTER TABLE "Data Department"."BNL"
+ALTER TABLE data_department.bnl
     OWNER to postgres;
