@@ -1,0 +1,24 @@
+CREATE TABLE data_department.homeless_bnl
+(
+    ind integer NOT NULL,
+    cname text,
+    uid text NOT NULL,
+    eid text NOT NULL,
+    pname text,
+    start_date date,
+    exit_date date,
+    exit_destination text,
+    age integer,
+    age_point integer,
+    chronic_point integer,
+    tm_point integer,
+    veteran_point integer,
+    combined_programs text,
+    ces_status text,
+    PRIMARY KEY (ind)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE data_department.bnl
+    OWNER to postgres;
