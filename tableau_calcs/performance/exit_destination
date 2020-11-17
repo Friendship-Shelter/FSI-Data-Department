@@ -103,7 +103,7 @@ ELSEIF [Programs Name] = "Street Outreach - Laguna Beach" THEN
         WHEN "Owned by client, with ongoing housing subsidy" THEN "Permanent Housing"
         WHEN NULL THEN "Still Enrolled"
     END
-ELSEIF [Programs Name] = "'Day Program" THEN //there is an extra single quote here due to a syntax error in the Tableau Calc language parser in Atom; it must be removed for the script to run properly
+ELSEIF [Programs Name] = "'Day Program'" THEN //there is an extra single quote here due to a syntax error in the Tableau Calc language parser in Atom; it may or may not need to be removed for the script to run properly
     CASE [Update/Exit Screen Destination]
         WHEN "Client refused" THEN "Returned to Homelessness"
         WHEN "Data not collected" THEN "Returned to Homelessness"
