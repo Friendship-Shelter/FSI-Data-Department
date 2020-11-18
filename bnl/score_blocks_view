@@ -1,9 +1,28 @@
+CREATE VIEW score_blocks AS
 SELECT *,
+	((current_date - episode_start_date)/30) AS loh,
 	(CASE
 		WHEN age > 64 THEN 1
 		WHEN age < 26 THEN 1
 		ELSE 0
-	END) AS age_point
+	END) AS age_point,
+	(CASE
+		WHEN chronic = 'Yes' THEN 1
+		ELSE 0
+	END) AS chronic_point,
+	(CASE
+		WHEN veteran = 'Yes' THEN 1
+		ELSE 0
+	END) AS veteran_point,
+	(CASE
+		WHEN chronic_disability = 'Yes'
+			AND mh_disability = 'Yes'
+			AND (sud_disability = 'Alcohol Abuse'
+					OR sud_disability = 'Drug Abuse'
+					OR sud_disability = 'Both Alcohol and Drug Abuse')
+			THEN 1
+		ELSE 0
+	END) AS tm_point
 FROM data_department.bnl
 WHERE exit_date ISNULL
 	OR exit_date > current_date - 90
