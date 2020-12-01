@@ -4,36 +4,36 @@ CREATE TABLE data_department.bnl2
     uid text NOT NULL,
     pid integer NOT NULL,
     eid integer NOT NULL,
-    cname text
-	fname text
-	lname text
-	dob date
+    cname text,
+	fname text,
+	lname text,
+	dob date,
     start_date date NOT NULL,
     exit_date date,
-    hoh text
+    hoh text,
     age integer,
-    ethnicity text
-    gender text
-    race text
-    veteran text
-    program_city text
-    chronic text
-	prior_residence text
+    ethnicity text,
+    gender text,
+    race text,
+    veteran text,
+    program_city text,
+    chronic text,
+	prior_residence text,
     episode_start_date date,
-    city_last_address text
-    city_immediately_prior text
-    destination text
-    any_disability text
-    chronic_disability text
-    developmental_disability text
-    hiv_disability text
-    mh_disability text
-    physical_disability text
-    sud_disability text
-	aname text
-    pname text
-    ptype text
-    current_homelessness_city text
+    city_last_address text,
+    city_immediately_prior text,
+    destination text,
+    any_disability text,
+    chronic_disability text,
+    developmental_disability text,
+    hiv_disability text,
+    mh_disability text,
+    physical_disability text,
+    sud_disability text,
+	aname text,
+    pname text,
+    ptype text,
+    current_homelessness_city text,
     CONSTRAINT "BNL_pkey" PRIMARY KEY eid)
 )
 
