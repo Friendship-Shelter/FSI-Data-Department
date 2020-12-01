@@ -1,10 +1,13 @@
-CREATE TABLE data_department.bnl
+CREATE TABLE data_department.bnl2
 (
     ind integer NOT NULL,
     uid text NOT NULL,
     pid integer NOT NULL,
     eid integer NOT NULL,
     cname text
+	fname text
+	lname text
+	dob date
     start_date date NOT NULL,
     exit_date date,
     hoh text
@@ -13,8 +16,9 @@ CREATE TABLE data_department.bnl
     gender text
     race text
     veteran text
-    program_city text 
+    program_city text
     chronic text
+	prior_residence text
     episode_start_date date,
     city_last_address text
     city_immediately_prior text
@@ -26,10 +30,11 @@ CREATE TABLE data_department.bnl
     mh_disability text
     physical_disability text
     sud_disability text
+	aname text
     pname text
     ptype text
     current_homelessness_city text
-    CONSTRAINT "BNL_pkey" PRIMARY KEY ind)
+    CONSTRAINT "BNL_pkey" PRIMARY KEY eid)
 )
 
 TABLESPACE pg_default;
