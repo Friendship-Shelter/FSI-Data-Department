@@ -1,9 +1,9 @@
 CREATE TABLE data_department.bnl2
-(
-    ind integer NOT NULL,
+
+    (ind integer NOT NULL,
     uid text NOT NULL,
     pid integer NOT NULL,
-    eid integer NOT NULL,
+    eid integer NOT NULL PRIMARY KEY,
     cname text,
 	fname text,
 	lname text,
@@ -33,9 +33,8 @@ CREATE TABLE data_department.bnl2
 	aname text,
     pname text,
     ptype text,
-    current_homelessness_city text,
-    CONSTRAINT "BNL_pkey" PRIMARY KEY eid)
-)
+    current_homelessness_city text)
+
 
 TABLESPACE pg_default;
 
