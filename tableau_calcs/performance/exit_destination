@@ -1,4 +1,4 @@
-IF [Update/Exit Custom Positive Exit Status] = 
+IF [Update/Exit Custom Positive Exit Status] = "Yes"
     AND [Programs Name] = "Bridge Housing Program"
         THEN "Permanent Housing"
         ELSEIF [Program Type] = "Emergency Shelter"
