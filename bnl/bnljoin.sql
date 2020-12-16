@@ -1,5 +1,29 @@
-CREATE VIEW scc.bnljoin AS
-SELECT DISTINCT *
+CREATE MATERIALIZED VIEW scc.bnljoin AS
+SELECT *
+FROM
+(SELECT DISTINCT *, ((current_date - episode_date)/30) AS loh,
+	(CASE
+		WHEN age > 64 THEN 1
+		WHEN age < 26 THEN 1
+		ELSE 0
+	END) AS age_point,
+	(CASE
+		WHEN chronic = 'Yes' THEN 1
+		ELSE 0
+	END) AS chronic_point,
+	(CASE
+		WHEN veteran = 'Yes' THEN 1
+		ELSE 0
+	END) AS veteran_point,
+	(CASE
+		WHEN chronic_disability = 'Yes'
+			AND mh_disability = 'Yes'
+			AND (sud_disability = 'Alcohol Abuse'
+					OR sud_disability = 'Drug Abuse'
+					OR sud_disability = 'Both Alcohol and Drug Abuse')
+			THEN 1
+		ELSE 0
+	END) AS tm_point
 FROM (SELECT *
 FROM (SELECT *
 FROM scc.actions RIGHT JOIN (
@@ -25,8 +49,5 @@ WHERE goosey.exit_date ISNULL
 		AND goosey.destination <> 'Long-term care facility or nursing home'
 		AND goosey.destination <> 'Staying or living with family, temporary tenure (e.g. room, apartment or house)'
 		AND goosey.destination <> 'Staying or living with friends, temporary tenure (e.g. room, apartment or house)'
-		AND goosey.destination <> 'Transitional housing for homeless persons (including homeless youth)') AS goosey_left,
-(SELECT bnl.uid AS cid, MAX(bnl.eid) AS recent_enrollment
-FROM scc.bnl
-GROUP BY bnl.uid) AS goosey_right
-WHERE goosey_right.cid = goosey_left.uid AND goosey_left.eid = goosey_right.recent_enrollment
+		AND goosey.destination <> 'Transitional housing for homeless persons (including homeless youth)') AS dumb) AS dumber
+WHERE meeting_date = '2020-12-04' OR meeting_date IS null
