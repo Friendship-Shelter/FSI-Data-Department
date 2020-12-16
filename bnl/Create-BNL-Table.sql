@@ -1,9 +1,8 @@
-CREATE TABLE data_department.bnl2
+CREATE TABLE scc.bnl
 
-    (ind integer NOT NULL,
+    (eid integer NOT NULL PRIMARY KEY,
     uid text NOT NULL,
     pid integer NOT NULL,
-    eid integer NOT NULL PRIMARY KEY,
     cname text,
 	fname text,
 	lname text,
@@ -19,11 +18,11 @@ CREATE TABLE data_department.bnl2
     program_city text,
     chronic text,
 	prior_residence text,
-    episode_start_date date,
+    episode_date date,
     city_last_address text,
-    city_immediately_prior text,
+    city_prior text,
     destination text,
-    any_disability text,
+    disability text,
     chronic_disability text,
     developmental_disability text,
     hiv_disability text,
@@ -33,10 +32,9 @@ CREATE TABLE data_department.bnl2
 	aname text,
     pname text,
     ptype text,
-    current_homelessness_city text)
-
+    city_current text)
 
 TABLESPACE pg_default;
 
-ALTER TABLE data_department.bnl
+ALTER TABLE scc.bnl
     OWNER to postgres;

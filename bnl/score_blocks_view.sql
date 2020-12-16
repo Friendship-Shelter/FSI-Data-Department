@@ -1,6 +1,6 @@
-CREATE VIEW score_blocks AS
+CREATE VIEW scc.score_blocks AS
 SELECT *,
-	((current_date - episode_start_date)/30) AS loh,
+	((current_date - episode_date)/30) AS loh,
 	(CASE
 		WHEN age > 64 THEN 1
 		WHEN age < 26 THEN 1
@@ -23,7 +23,7 @@ SELECT *,
 			THEN 1
 		ELSE 0
 	END) AS tm_point
-FROM data_department.bnl
+FROM scc.bnl
 WHERE exit_date ISNULL
 	OR exit_date > current_date - 90
 		AND destination <> 'Permanent housing (other than RRH) for formerly homeless persons'

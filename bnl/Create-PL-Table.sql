@@ -1,16 +1,15 @@
-CREATE TABLE data_department.pl
+CREATE TABLE scc.ces
 (
-    ind integer NOT NULL,
     status text,
     score integer,
     weighted decimal,
     survey_date date,
     outreach_team text,
-    interviewer_name text,
-    first_name text,
-    middle_name text,
-    last_name text,
-    dob_date date,
+    iname text,
+    fname text,
+    mname text,
+    lname text,
+    dob date,
     age integer,
     ssn text,
     sleeping_location text,
@@ -19,7 +18,7 @@ CREATE TABLE data_department.pl
     homelessness_documentation text,
     chronic_documentation text,
     disability_documentation text,
-    ch_status text,
+    chronic text,
     dr_date date,
     match_date date,
     housuing_provider text,
@@ -28,16 +27,16 @@ CREATE TABLE data_department.pl
     housed_date date,
     deceased text,
     inactive_date date,
-    client_inactive text,
+    inactive text,
     housed_elsewhere text,
     special_population text,
-    last_contact_date text,
+    contact_date text,
     notes text,
     surveycity_daycity_sleepcity text,
     spa text,
     ces_uid text,
-    PRIMARY KEY (ind)
+    PRIMARY KEY (ces_uid, survey_date, status)
 );
 
-ALTER TABLE data_department.pl
+ALTER TABLE scc.ces
     OWNER to postgres;
